@@ -1,15 +1,15 @@
-import { LIST } from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes';
 
 const initialState = {
   books: []
 };
 
-export default function fetchBooks(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
-    case 'REQUEST_BOOKS':
-      return action;
-    case 'RECEIVE_BOOKS':
-      return {books: action.books};
+    case types.REQUEST_BOOKS:
+      return state;
+    case types.RECEIVE_BOOKS:
+      return Object.assign({}, state, {books: action.books});
     default:
       return state
   }

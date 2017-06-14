@@ -18,8 +18,8 @@ export function fetchBooks() {
   return (dispatch) => {
     dispatch(requestBooks());
 
-    return fetch('http://127.0.0.1:8000/api/v1/books')
-      .then((response) => response.json)
+    return fetch('/api/v1/books/')
+      .then((response) => response.json())
       .then((json) => dispatch(receiveBooks(json)));
   };
 }

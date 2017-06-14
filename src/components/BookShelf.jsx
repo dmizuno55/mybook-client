@@ -2,10 +2,6 @@ import React, { PropTypes, Component } from 'react';
 import Book from './Book';
 
 class BookShelf extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <table>
@@ -18,7 +14,7 @@ class BookShelf extends Component {
       </tr>
       </thead>
       <tbody>
-      {(this.props.books || []).map((book) => <Book key={book.id} value={book} />)}
+      {(this.props.books).map((book) => <Book key={book.id} value={book} />)}
       </tbody>
       </table>
     );

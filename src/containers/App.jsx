@@ -8,22 +8,26 @@ import * as BookActions from '../actions/book';
 
 class App extends Component {
   componentDidMount() {
-    return this.props.actions.fetchBooks();
+    this.props.actions.fetchBooks();
   }
 
   render() {
     return (
       <div>
         <Header />
-        <BookShelf />
+        <BookShelf books={this.props.books}/>
       </div>
     );
   }
 }
 
+App.propTypes = {
+  books: PropTypes.array
+};
+
 // Appコンポーネントにstateを流し込む
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps(state, props) {
+  return state.book;
 }
 
 function mapDispatchToProps(dispatch) {

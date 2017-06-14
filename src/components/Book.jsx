@@ -18,4 +18,11 @@ class Book extends Component {
   }
 }
 
+Book.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  publisher: PropTypes.string,
+  page: PropTypes.number
+};
+
 export default Book;

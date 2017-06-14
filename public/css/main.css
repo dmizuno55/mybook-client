@@ -7,3 +7,7 @@ body {
   line-height: 20px;
   margin: 0px;
 }
+
+table.book-shelf {
+  border: solid 1px
+}
